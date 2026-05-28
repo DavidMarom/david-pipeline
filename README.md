@@ -27,7 +27,7 @@ David Pipeline is an open-source Next.js starter built around a composable, deve
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-org/david-pipeline.git
+git clone https://github.com/DavidMarom/david-pipeline.git
 cd david-pipeline
 
 # Install dependencies

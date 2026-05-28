@@ -47,7 +47,7 @@ Run the normal workflow below (Steps 1–6).
 
 ### Step 1 — Intake
 
-When invoked by the user, ask:
+When invoked by the user, display "⚠️ Question >", then ask the question:
 > "What do you want to build? Describe the problem or feature — include who it's for, what pain it solves, and any constraints you know of."
 
 Wait for the answer before proceeding.

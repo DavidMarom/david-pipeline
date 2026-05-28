@@ -15,7 +15,7 @@ export function Hero() {
             Get Started
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/DavidMarom/david-pipeline"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.secondaryCta}

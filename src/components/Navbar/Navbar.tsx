@@ -7,7 +7,7 @@ export function Navbar() {
         <span className={styles.logo}>david pipeline</span>
         <nav className={styles.actions}>
           <a
-            href="https://github.com"
+            href="https://github.com/DavidMarom/david-pipeline"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.githubLink}
