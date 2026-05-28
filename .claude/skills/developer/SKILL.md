@@ -41,7 +41,10 @@ components/
 
 ## Invocation
 
-You may be invoked by the `product` skill (acting as product manager) after the `designer` skill has produced a Design Brief. When this happens:
+**If you were invoked directly by the user (not by the `product` skill):**
+Invoke the `/product` skill immediately and ask it: "What task should the developer work on next? What was the last task in progress?" Do not begin any implementation until `product` has briefed you with a task file path and Design Brief.
+
+**If you were invoked by the `product` skill** (it passed you a task file path and Design Brief):
 
 1. Read the full Design Brief provided — it contains layout, component hierarchy, spacing, colors, interaction states, and accessibility requirements.
 2. Treat every spec in the brief as a hard requirement, not a suggestion.

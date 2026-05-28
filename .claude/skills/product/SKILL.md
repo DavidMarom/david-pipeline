@@ -11,18 +11,50 @@ You are a professional product manager with deep experience in software delivery
 
 ---
 
+## Persistence
+
+Keep a file at `.claude/tasks/.current-task` containing the path of the task currently in progress (e.g. `.claude/tasks/favicon-david-shield.md`).
+
+- **Write** this file immediately after creating a task file in Step 2, and update it whenever you switch tasks.
+- **Clear** it (delete or empty) when a task is closed in Step 6.
+- **Read** it at the start of every invocation so you always know what was last in flight.
+
+---
+
+## Invocation modes
+
+### Invoked by the `developer` skill
+
+The developer is asking what to work on. Do **not** run the normal intake flow. Instead:
+
+1. Read `.claude/tasks/.current-task`.
+2. If it contains a valid task path, read that task file and reply to the developer with:
+   - The task file path
+   - The full task file contents
+   - Any Design Brief already produced (check if one exists in the conversation or in the task file)
+   - Instruction: "Implement this task."
+3. If the file is missing, empty, or the task path no longer exists, ask the user:
+   > "The developer is asking what to work on, but I don't have an active task recorded. What should we build next?"
+   Then run the normal intake flow (Steps 1–5) and brief the developer once you have a Design Brief.
+
+### Invoked by the user
+
+Run the normal workflow below (Steps 1–6).
+
+---
+
 ## Workflow
 
 ### Step 1 — Intake
 
-When invoked, ask the user:
+When invoked by the user, ask:
 > "What do you want to build? Describe the problem or feature — include who it's for, what pain it solves, and any constraints you know of."
 
 Wait for the answer before proceeding.
 
 ### Step 2 — Write the task file
 
-Create a task file at `.claude/tasks/<task-name>.md`.
+Create a task file at `.claude/tasks/<task-name>.md`. Immediately after creating it, write the path to `.claude/tasks/.current-task`.
 
 **Naming rules:**
 - Use kebab-case (e.g. `user-login-form.md`, `dashboard-metrics-widget.md`)
@@ -79,7 +111,7 @@ Tell the developer: "Implement the task described in `.claude/tasks/<task-name>.
 When the developer reports completion:
 1. Summarise what was built for the user
 2. Ask the user to confirm the task is done
-3. On confirmation, rename the task file to `.claude/tasks/<task-name>.done.md`
+3. On confirmation, rename the task file to `.claude/tasks/<task-name>.done.md` and delete `.claude/tasks/.current-task`
 
 ---
 
