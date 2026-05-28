@@ -62,13 +62,17 @@ Tell the designer: "Please produce a Design Brief for this task."
 
 When the designer replies, review the brief for completeness. If anything is missing or contradicts the requirements, ask the designer to revise before moving on.
 
+**Do NOT wait for the user to act.** Immediately continue to Step 5 yourself.
+
 ### Step 5 — Invoke the developer
 
-Hand off to `/developer` with:
+Without pausing or asking the user, hand off directly to `/developer` with:
 - The Design Brief produced by the designer
 - The exact task file path: `.claude/tasks/<task-name>.md`
 
 Tell the developer: "Implement the task described in `.claude/tasks/<task-name>.md` using the following Design Brief: [paste brief]."
+
+**This handoff is automatic — you are the orchestrator. The user should never need to relay the brief between skills.**
 
 ### Step 6 — Close the task
 
