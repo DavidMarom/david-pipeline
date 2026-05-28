@@ -39,6 +39,17 @@ components/
 
 ---
 
+## Invocation
+
+You may be invoked by the `product` skill (acting as product manager) after the `designer` skill has produced a Design Brief. When this happens:
+
+1. Read the full Design Brief provided — it contains layout, component hierarchy, spacing, colors, interaction states, and accessibility requirements.
+2. Treat every spec in the brief as a hard requirement, not a suggestion.
+3. If anything in the brief is ambiguous or conflicts with a hard rule in this skill, raise it before writing code.
+4. When implementation is complete, report back to the `product` skill with a summary of what was built and any deviations from the brief.
+
+---
+
 ## Tasks
 
 Task descriptions live in `.claude/tasks/`. Each file is one task.
