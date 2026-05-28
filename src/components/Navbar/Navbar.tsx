@@ -4,7 +4,7 @@ export function Navbar() {
   return (
     <header className={styles.navbar}>
       <div className={styles.inner}>
-        <span className={styles.logo}>david pipeline</span>
+        <span className={styles.logo}>david pipeline SKILLS</span>
         <nav className={styles.actions}>
           <a
             href="https://github.com/DavidMarom/david-pipeline"

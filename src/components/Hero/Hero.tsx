@@ -4,22 +4,18 @@ export function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
-        <p className={styles.eyebrow}>Open Source</p>
+        <p className={styles.eyebrow}>Start with /product</p>
         <h1 className={styles.headline}>David Pipeline</h1>
-        <p className={styles.tagline}>
-          Start with /product
-        </p>
+
         <div className={styles.ctaGroup}>
-          <a href="#get-started" className={styles.primaryCta}>
-            Get Started
-          </a>
+
           <a
             href="https://github.com/DavidMarom/david-pipeline"
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.secondaryCta}
+            className={styles.primaryCta}
           >
-            View on GitHub
+            Get Started
           </a>
         </div>
       </div>
