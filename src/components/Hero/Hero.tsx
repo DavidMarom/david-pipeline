@@ -7,8 +7,7 @@ export function Hero() {
         <p className={styles.eyebrow}>Open Source</p>
         <h1 className={styles.headline}>David Pipeline</h1>
         <p className={styles.tagline}>
-          A template pipeline built for developers. Skip the boilerplate,
-          own your stack, ship faster.
+          Start with /product
         </p>
         <div className={styles.ctaGroup}>
           <a href="#get-started" className={styles.primaryCta}>
