@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# David Pipeline
+
+> A template pipeline built for developers. Skip the boilerplate, own your stack, ship faster.
+
+David Pipeline is an open-source Next.js starter built around a composable, developer-first philosophy. Every stage of the pipeline is a small, swappable module — extend what you need, skip what you don't.
+
+---
+
+## Features
+
+- **Fast by default** — pre-wired with sensible defaults so you spend zero time on boilerplate
+- **Composable** — each pipeline stage is an independent module; replace or remove anything
+- **Developer-first** — built for the command line, integrates with the tools you already use
+- **MIT licensed** — fork it, own it, ship it your way
+
+## Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | [Next.js 16](https://nextjs.org) (App Router) |
+| Language | TypeScript 5 |
+| Styling | CSS Modules (no Tailwind, no CSS-in-JS) |
+| Font | [Geist](https://vercel.com/font) via `next/font` |
+| Runtime | Node.js |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Clone the repo
+git clone https://github.com/your-org/david-pipeline.git
+cd david-pipeline
+
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the development server with hot reload |
+| `npm run build` | Build for production |
+| `npm run start` | Start the production server |
+| `node scripts/generate-favicon.mjs` | Regenerate all favicon assets from the SVG source |
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── layout.tsx        # Root layout — fonts, metadata, global styles
+│   ├── page.tsx          # Home route
+│   └── globals.css       # Design tokens and resets
+└── components/
+    ├── Navbar/
+    ├── Hero/
+    ├── Features/
+    ├── FeatureCard/
+    └── Footer/
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+public/
+├── favicon.svg           # Master favicon source (Star of David mark)
+├── favicon.ico           # ICO bundle (16, 32, 48 px)
+├── favicon-16x16.png
+├── favicon-32x32.png
+├── apple-touch-icon.png  # 180×180
+├── icon-192.png          # PWA / Android
+├── icon-512.png          # PWA splash
+└── manifest.webmanifest  # Web App Manifest
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+scripts/
+└── generate-favicon.mjs  # Rasterises favicon.svg → all PNG/ICO sizes
+```
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Pull requests are welcome. For significant changes, open an issue first to discuss what you'd like to change.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Fork the repo
+2. Create a feature branch: `git checkout -b feat/my-feature`
+3. Commit your changes: `git commit -m "feat: add my feature"`
+4. Push and open a pull request
+
+## License
+
+[MIT](LICENSE)
