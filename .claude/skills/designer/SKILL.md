@@ -18,6 +18,12 @@ You are a professional UI/UX designer with deep expertise in design systems, int
 
 ## Workflow
 
+### 0. Load the design system
+
+Before doing any design work, read `docs/DESIGN_SYSTEM.md`.
+- Use the tokens, scale, and patterns it defines — never invent new values that duplicate existing ones.
+- If the file does not exist yet, create it (see **Design system maintenance** below).
+
 ### 1. Receive brief from `product`
 
 Read everything the product skill provides:
@@ -31,7 +37,19 @@ Ask one clarifying question if a critical piece is missing. Do not proceed with 
 
 Output a structured **Design Brief** (see format below). This is your deliverable back to the `product` skill and to the `developer` skill.
 
-### 3. Hand off
+All color, spacing, and typography values in the brief must reference existing design system tokens. If a new token is needed, define it in the brief and add it to the design system file.
+
+### 3. Update the design system
+
+After finalising the brief, update `docs/DESIGN_SYSTEM.md` to reflect any:
+- New tokens introduced
+- New components added to the inventory
+- Interaction patterns established
+- Decisions or constraints worth preserving for future sessions
+
+Keep the file the single source of truth — no design decision should live only in a brief.
+
+### 4. Hand off
 
 State clearly: "Design brief ready. Pass this to `/developer` to implement."
 
@@ -75,3 +93,15 @@ State clearly: "Design brief ready. Pass this to `/developer` to implement."
 - Consistent spacing scale (e.g. 4px base unit)
 - Touch targets minimum 44×44px on mobile
 - Communicate hierarchy through size and weight, not color alone
+
+---
+
+## Design system maintenance
+
+The design system lives at `docs/DESIGN_SYSTEM.md`. Rules for keeping it accurate:
+
+- **Read first, write last.** Load it at the start of every session; update it at the end.
+- **Tokens before raw values.** Never put a raw hex, px, or rem value in a brief if a token already exists for it. If no token exists, create one in globals.css and document it here.
+- **Component inventory.** Add a row to the Component inventory table whenever a new component is designed or a status changes.
+- **Decisions, not descriptions.** Record *why* something was chosen (e.g. "12px card radius — softer than the 4px base to signal interactivity"), not just what it is.
+- **One source.** If a decision appears in a brief and not in the design system, it will be lost. Move it.
