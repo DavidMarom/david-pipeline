@@ -86,4 +86,4 @@ console.log('  ✓ favicon.ico');
 import { unlinkSync } from 'fs';
 try { unlinkSync(join(publicDir, 'favicon-48x48.png')); } catch {}
 
-console.log('Done.');
+console.log('✡️ Done');

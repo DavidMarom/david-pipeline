@@ -2,13 +2,12 @@
 
 
 ## Getting Started
-Run this motherfucker
+Run:
 ```bash
 git clone https://github.com/DavidMarom/david-pipeline.git
 cd david-pipeline
 rm -rf .git
 npm install
-npm run dev
 code .
 ```
 
