@@ -51,7 +51,10 @@ Keep the file the single source of truth — no design decision should live only
 
 ### 4. Hand off
 
-State clearly: "Design brief ready. Pass this to `/developer` to implement."
+Invoke `/developer` with:
+- The full Design Brief you just produced
+- The task file path received from `product` in Step 1
+- Instruction: "Implement this task using the Design Brief below. The task file is at `<path>`."
 
 ---
 

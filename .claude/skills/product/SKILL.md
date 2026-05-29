@@ -88,25 +88,11 @@ Hand off to `/designer` with:
 - The full contents of the task file
 - The task file path: `.claude/tasks/<task-name>.md`
 
-Tell the designer: "Please produce a Design Brief for this task."
+Tell the designer: "Please produce a Design Brief for this task, then invoke `/developer` to implement it."
 
-### Step 4 — Receive the Design Brief
+The designer will chain directly to the developer — you do not need to wait or relay the brief.
 
-When the designer replies, review the brief for completeness. If anything is missing or contradicts the requirements, ask the designer to revise before moving on.
-
-**Do NOT wait for the user to act.** Immediately continue to Step 5 yourself.
-
-### Step 5 — Invoke the developer
-
-Without pausing or asking the user, hand off directly to `/developer` with:
-- The Design Brief produced by the designer
-- The exact task file path: `.claude/tasks/<task-name>.md`
-
-Tell the developer: "Implement the task described in `.claude/tasks/<task-name>.md` using the following Design Brief: [paste brief]."
-
-**This handoff is automatic — you are the orchestrator. The user should never need to relay the brief between skills.**
-
-### Step 6 — Close the task
+### Step 4 — Close the task
 
 When the developer reports completion:
 1. Summarise what was built for the user

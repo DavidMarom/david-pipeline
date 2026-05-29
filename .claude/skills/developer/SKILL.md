@@ -41,7 +41,7 @@ components/
 
 ## Invocation
 
-**If you were invoked directly by the user (not by the `product` skill):**
+**If you were invoked directly by the user (not by another skill):**
 Invoke the `/product` skill immediately and ask it: "What task should the developer work on next? What was the last task in progress?" Do not begin any implementation until `product` has briefed you with a task file path and Design Brief.
 
 **If you were invoked by the `product` skill** (it passed you a task file path and Design Brief):
@@ -49,7 +49,14 @@ Invoke the `/product` skill immediately and ask it: "What task should the develo
 1. Read the full Design Brief provided — it contains layout, component hierarchy, spacing, colors, interaction states, and accessibility requirements.
 2. Treat every spec in the brief as a hard requirement, not a suggestion.
 3. If anything in the brief is ambiguous or conflicts with a hard rule in this skill, raise it before writing code.
-4. When implementation is complete, report back to the `product` skill with a summary of what was built and any deviations from the brief.
+4. When implementation is complete, invoke `/product` and report: a summary of what was built and any deviations from the brief.
+
+**If you were invoked by the `designer` skill** (it passed you a Design Brief and a task file path):
+
+1. Read the Design Brief — treat every spec as a hard requirement, not a suggestion.
+2. Also read the task file at the provided path for full context on the problem and requirements.
+3. If anything in the brief is ambiguous or conflicts with a hard rule in this skill, raise it before writing code.
+4. When implementation is complete, invoke `/product` and report: a summary of what was built and any deviations from the brief.
 
 ---
 
