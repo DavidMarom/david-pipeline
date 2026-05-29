@@ -1,4 +1,5 @@
 import styles from "./Hero.module.css";
+import { CodeBlock } from "@/components/CodeBlock/CodeBlock";
 
 export function Hero() {
   return (
@@ -7,8 +8,9 @@ export function Hero() {
         <p className={styles.eyebrow}>Start with /product</p>
         <h1 className={styles.headline}>David Pipeline</h1>
 
-        <div className={styles.ctaGroup}>
+        <CodeBlock />
 
+        <div className={styles.ctaGroup}>
           <a
             href="https://github.com/DavidMarom/david-pipeline"
             target="_blank"

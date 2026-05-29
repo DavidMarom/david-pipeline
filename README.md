@@ -21,4 +21,4 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 | `npm run build` | Build for production |
 | `npm run start` | Start the production server |
 
-
+✡️
